@@ -2,7 +2,7 @@
 
 This is a basic halftone effect using [Drawbot](https://www.drawbot.com/)/Python.
 
-## How to use
+## How to
 
     reticulate(image_path, resolution, dot_size)
 
