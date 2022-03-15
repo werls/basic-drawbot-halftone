@@ -9,3 +9,7 @@ This is a basic halftone effect using [Drawbot](https://www.drawbot.com/)/Python
 **image_path**: URL or local file path  
 **resolution**: how many dots per row  
 **dot_size**: the size of dot  
+
+## Example
+
+![Example](./examples/reticulate_example01.png "Example")
