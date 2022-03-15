@@ -1,36 +1,33 @@
 from drawBot import *
 
 class reticulate():
-
-    def __init__(self,path,resolution = 100,dotSize = 20):
+    def __init__(self ,path, resolution = 100, dot_size = 20):
         self.path = path
         self.resolution = resolution
-        self.dotSize = dotSize
-        self.w,self.h = imageSize(self.path)
-        
+        self.dot_size = dot_size
+        self.w, self.h = imageSize(self.path)
         self.draw()
 
     def draw(self):
-        newPage(self.w,self.h)
+        newPage(self.w, self.h)
         fill(1)
-        rect(0,0,self.w,self.h)
+        rect(0, 0, self.w, self.h)
         
-        translate(-self.dotSize/2,-self.dotSize/2)
+        translate(-self.dot_size / 2, -self.dot_size / 2)
 
         if self.w > self.h:
-            ponto = self.w/self.resolution + 1
+            dot = self.w / self.resolution + 1
         else:
-            ponto = self.h/self.resolution + 1    
-        # ponto = self.dotSize
+            dot = self.h / self.resolution + 1    
+        # dot = self.dot_size
         
         for width in range(self.resolution):
-            x = ponto+width*ponto
+            x = dot + width * dot
             for height in range(self.resolution):
-                y = ponto+height*ponto
-                
-                color = imagePixelColor(self.path,(x,y))
+                y = dot + height * dot        
+                color = imagePixelColor(self.path, (x, y))
                 if color:
-                    r,g,b,a = color
+                    r, g, b, a = color
                     if r or g or b or a != 0:
                         fill(r,g,b,a)
-                        oval(x,y,self.dotSize,self.dotSize)
+                        oval(x,y,self.dot_size,self.dot_size)
